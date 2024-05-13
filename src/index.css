@@ -1,0 +1,307 @@
+body {
+  margin: 0;
+  padding: 0;
+  font-family: "Almarai", sans-serif;
+}
+.m-0 {
+  margin: 0;
+}
+.p-0 {
+  padding: 0;
+}
+
+.container {
+  --bs-gutter-x: 0;
+}
+.border {
+  border-style: solid;
+  border-color: red;
+  border-width: 5px;
+}
+/*--------------*/
+/*-- App page --*/
+/*--------------*/
+.app {
+  font-family: "Almarai", sans-serif;
+  /* background-color: #e3e6e6; */
+  background-color: #1d1f1f;
+}
+/*--- End - App component ---*/
+
+/*------------------------*/
+/*-- HomePage component --*/
+/*------------------------*/
+.home {
+  font-family: "Almarai", sans-serif;
+  /* background-color: #f9f9f9; */
+  background-color: #e3e6e6;
+  min-height: 100vh;
+}
+
+.home-container {
+  background-color: #fff;
+  padding: 10px 20px;
+  margin: 30px 0px;
+}
+
+/*--- End - HomePage component ---*/
+
+/*------------------------*/
+/*--- NavBar component ---*/
+/*------------------------*/
+.login-img {
+  height: 1.5em;
+  width: 1.5em;
+}
+/*--- End - NavBar component ---*/
+
+/*------------------------*/
+/*--- slider component ---*/
+/*------------------------*/
+.slider-background {
+  /* background: linear-gradient(173.68deg, #ffedf5 0%, #ffd5e7 100%); */
+  background: linear-gradient(#ce3a7a, #ffedf5);
+}
+
+.slider-background1 {
+  background: #f0d0b7;
+}
+
+.slider-background2 {
+  background: linear-gradient(174.76deg, #d3deff 0%, #037db0 100%);
+}
+.slider-background3 {
+  /* background: #ffe0e6; */
+  background: linear-gradient(#d4b8be, #ffedf5);
+}
+.slider-background4 {
+  background: linear-gradient(175.24deg, #b2e8f0 0%, #c9c9c9 100%);
+}
+
+.slider-title {
+  color: #915970;
+  font-family: Almarai;
+  font-size: 30px;
+  font-weight: 800;
+  letter-spacing: 0;
+  line-height: 53px;
+  text-align: center;
+}
+
+.slider-text {
+  color: #915970;
+  font-family: Almarai;
+  font-size: 24px;
+  letter-spacing: 0;
+  line-height: 32px;
+  text-align: center;
+}
+
+/*--- End - slider component ---*/
+
+/*--------------------------*/
+/*--- HomeProduct component ---*/
+/*--------------------------*/
+
+/*--- End - HomeProduct component ---*/
+
+/*--------------------------*/
+/*--- subtitle component ---*/
+/*--------------------------*/
+
+/* .subtitle-dev {
+  margin-top: 2em;
+} */
+
+.subtile-txt {
+  color: #272727;
+  font-family: Almarai;
+  font-size: 21px;
+  font-weight: bold;
+  letter-spacing: 0;
+  line-height: 28px;
+}
+
+.shopping-now {
+  padding: 0px 0px 0px 15px;
+  height: 35px;
+  /* width: 90px; */
+  color: #007185;
+  text-decoration: none;
+  text-align: center;
+  /* border: 1px solid #272727;
+  border-radius: 14px; */
+}
+
+.shopping-now:hover {
+  /* background-color: #272727; */
+  text-decoration: underline;
+  /* border: 1px solid #272727; */
+  color: #b84c31;
+  /* color: #f9f9f9; */
+  /* border-radius: 14px; */
+  cursor: pointer;
+}
+
+/*--- End - subtitle component ---*/
+
+/*-------------------------------*/
+/*--- product card component ---*/
+/*------------------------------*/
+
+.card-title {
+  color: #555550;
+  font-family: Almarai;
+  font-size: 16px;
+  letter-spacing: 0;
+  line-height: 20px;
+  text-align: right;
+}
+
+.card-price {
+  color: #272727;
+  font-family: Almarai;
+  font-size: 21px;
+  font-weight: bold;
+  letter-spacing: 0;
+  line-height: 28px;
+}
+
+.card-currency {
+  color: #555550;
+  font-family: Almarai;
+  font-size: 18px;
+  letter-spacing: 0;
+  line-height: 24px;
+}
+
+.card-rate {
+  color: #ffc107;
+  font-family: Almarai;
+  font-size: 14px;
+  font-weight: bold;
+  letter-spacing: 0;
+  line-height: 19px;
+}
+
+/*--- End - product card component ---*/
+
+/*---------------------------------*/
+/*---- category card component ----*/
+/*---------------------------------*/
+.allCard {
+  position: relative;
+  height: 4em;
+  width: 4em;
+}
+
+.categoty-card {
+  height: 12em;
+  width: 12em;
+  border-radius: 50%;
+  /* opacity: 0.75; */
+  filter: brightness(130%);
+  align-content: end;
+  background-color: #b95208;
+}
+.categoty-card-img {
+  max-width: 10em;
+  max-height: 10em;
+  position: absolute;
+  top: 40%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.categoty-card-decor {
+  max-width: 12em;
+  max-height: 12em;
+  opacity: 0.25;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+.categoty-card-text {
+  color: #555550;
+  font-family: Almarai;
+  font-size: 1.25em;
+  font-weight: bold;
+  text-align: center;
+  text-wrap: none;
+}
+
+/*--- End - category card component ---*/
+
+/*-----------------------------------*/
+/*---------- Brand section ----------*/
+/*-----------------------------------*/
+
+.brand-card-img {
+  width: 9em;
+  /* width: 7em; */
+  max-width: 10em;
+  max-height: 10em;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+/*-------End - Brand setion ----------*/
+
+/*-----------------------------------*/
+/*-------- discount section --------*/
+/*-----------------------------------*/
+.home-container-offers {
+  border-radius: 8px;
+  background: radial-gradient(#ffad39 0%, #ff9c18 100%);
+  height: 15em;
+}
+
+.discount-title {
+  color: #ffffff;
+  font-family: Cairo;
+  font-size: 2.5em;
+  font-weight: bold;
+  letter-spacing: 0;
+  line-height: 39px;
+  text-shadow: 3px 1px 3px #de6d00;
+}
+.dicount-img {
+  max-height: 15em;
+  max-width: 100%;
+}
+/*------ End - discount ---------*/
+
+/*-----------------------------------*/
+/*-------- foter section --------*/
+/*-----------------------------------*/
+.footer-background {
+  background-color: #1d1f1f;
+}
+
+.footer {
+  width: 100%;
+}
+.footer-shroot {
+  color: #979797;
+  font-family: Almarai;
+  font-size: 0.8em;
+  letter-spacing: 0.1em;
+  font-weight: 600;
+  letter-spacing: 0;
+  line-height: 18px;
+  cursor: pointer;
+}
+
+.footer-brand {
+  color: #979797;
+  font-family: "Almarai";
+  font-size: 0.8em;
+  letter-spacing: 0.1em;
+  font-weight: 600;
+  text-align: left;
+  text-align: justify;
+}
+/*-------- end footer ----------*/
