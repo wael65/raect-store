@@ -3,8 +3,6 @@ import { Card, Col } from "react-bootstrap";
 
 import { NavLink } from "react-router-dom";
 
-import { AdvancedImage } from "@cloudinary/react";
-
 const BrandCard = ({ img }) => {
   return (
     <Col
@@ -21,8 +19,7 @@ const BrandCard = ({ img }) => {
         style={{ textDecoration: "none", cursor: "pointer" }}
       >
         <div className="allCard d-flex justify-content-center">
-          {/* <Card.Img className="brand-card-img" src={img} /> */}
-          <AdvancedImage className="brand-card-img" cldImg={img} />
+          <Card.Img className="brand-card-img" src={img} />
         </div>
       </NavLink>
     </Col>

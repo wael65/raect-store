@@ -1,11 +1,24 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import { Container, Row } from "react-bootstrap";
 import CategoryCard from "./../Category/CategoryCard";
 import SubTitle from "../Uitily/SubTitle";
 
-import item from "../../images/item.png";
+import baseUrl from "../../Api/baseURL";
 
 const HomeCategory = ({ title, btnTxt, pathTxt }) => {
+  const [cat, setCat] = useState([]);
+
+  const getCatData = async () => {
+    const res = await baseUrl.get("category");
+
+    setCat(res.data);
+    console.log(cat);
+  };
+
+  useEffect(() => {
+    getCatData();
+  }, []);
+
   return (
     <Container>
       <div
@@ -18,11 +31,17 @@ const HomeCategory = ({ title, btnTxt, pathTxt }) => {
           pathTxt={pathTxt}
         />
         <Row className="my-3 d-flex justify-content-between ">
-          <CategoryCard title="Electronics " img={item} />
-          <CategoryCard title=" Kitchin" img={item} />
-          <CategoryCard title=" Kids" img={item} />
-          <CategoryCard title=" Cosmatics" img={item} />
-          <CategoryCard title=" Fashion" img={item} />
+          {cat
+            ? cat.map((item, index) => {
+                return (
+                  <CategoryCard
+                    key={index}
+                    title={item.name}
+                    img={item.avatar}
+                  />
+                );
+              })
+            : null}
         </Row>
       </div>
     </Container>

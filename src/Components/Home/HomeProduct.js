@@ -1,9 +1,22 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import { Container, Row } from "react-bootstrap";
 import ProductCard from "../Products/ProductCard";
 import SubTitle from "../Uitily/SubTitle";
+import baseUrl from "../../Api/baseURL";
 
 const HomeProduct = ({ title, btnTxt, pathTxt }) => {
+  const [prod, setProd] = useState([]);
+
+  const getProdData = async () => {
+    const res = await baseUrl.get("product");
+
+    setProd(res.data);
+    console.log(prod);
+  };
+
+  useEffect(() => {
+    getProdData();
+  }, []);
   return (
     <Container>
       <div
@@ -16,10 +29,19 @@ const HomeProduct = ({ title, btnTxt, pathTxt }) => {
           pathTxt={pathTxt}
         />
         <Row className="my-2 d-flex justify-content-start ">
-          <ProductCard />
-          <ProductCard />
-          <ProductCard />
-          <ProductCard />
+          {prod
+            ? prod.map((item, index) => {
+                return (
+                  <ProductCard
+                    key={index}
+                    title={item.name}
+                    img={item.avatar}
+                    description={item.name}
+                    price={item.avatar}
+                  />
+                );
+              })
+            : null}
         </Row>
       </div>
     </Container>
