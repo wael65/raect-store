@@ -5,7 +5,7 @@ import favoff from "../../images/fav-off.png";
 import rate from "../../images/rate.png";
 import { Link } from "react-router-dom";
 
-const ProductCard = () => {
+const ProductCard = ({ title, img, description, price }) => {
   return (
     <Col
       xs="6"
@@ -29,7 +29,7 @@ const ProductCard = () => {
         }}
       >
         <Link to="/products/:id" style={{ textDecoration: "none" }}>
-          <Card.Img style={{ height: "228px", width: "100%" }} src={prod1} />
+          <Card.Img style={{ height: "228px", width: "100%" }} src={img} />
         </Link>
         <div className="d-flex justify-content-end mx-2 ">
           <img
@@ -44,9 +44,7 @@ const ProductCard = () => {
         </div>
         <Card.Body>
           <Card.Title>
-            <div className="card-title">
-              سود كربون ساعة يد ذكية بيب إس أسود كربون{" "}
-            </div>
+            <div className="card-title">{description}</div>
           </Card.Title>
           <Card.Text>
             <div className="d-flex justify-content-between ">
@@ -61,7 +59,7 @@ const ProductCard = () => {
                 <div className="card-rate mx-2">4.5</div>
               </div>
               <div className="d-flex">
-                <div className="card-price">880</div>
+                <div className="card-price">{price}</div>
                 <div className="card-currency mx-1">جنيه</div>
               </div>
             </div>
