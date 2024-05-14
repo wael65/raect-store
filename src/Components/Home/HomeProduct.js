@@ -30,7 +30,7 @@ const HomeProduct = ({ title, btnTxt, pathTxt }) => {
         />
         <Row className="my-2 d-flex justify-content-start ">
           {prod
-            ? prod.map((item, index) => {
+            ? prod.slice(0, 4).map((item, index) => {
                 return (
                   <ProductCard
                     key={index}

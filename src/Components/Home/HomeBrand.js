@@ -27,8 +27,8 @@ const HomeBrand = ({ pathTxt }) => {
         />
         <Row className="my-2 d-flex justify-content-between">
           {brand
-            ? brand.map((item, index) => {
-                return <BrandCard img={item.avatar} />;
+            ? brand.slice(0, 5).map((item, index) => {
+                return <BrandCard key={index} img={item.avatar} />;
               })
             : null}
         </Row>

@@ -32,7 +32,7 @@ const HomeCategory = ({ title, btnTxt, pathTxt }) => {
         />
         <Row className="my-3 d-flex justify-content-between ">
           {cat
-            ? cat.map((item, index) => {
+            ? cat.slice(0, 5).map((item, index) => {
                 return (
                   <CategoryCard
                     key={index}

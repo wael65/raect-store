@@ -44,7 +44,7 @@ const ProductCard = ({ title, img, description, price }) => {
         </div>
         <Card.Body>
           <Card.Title>
-            <div className="card-title">{description}</div>
+            <div className="card-title">{title}</div>
           </Card.Title>
           <Card.Text>
             <div className="d-flex justify-content-between ">
