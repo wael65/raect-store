@@ -36,8 +36,8 @@ const HomeProduct = ({ title, btnTxt, pathTxt }) => {
                     key={index}
                     title={item.name}
                     img={item.avatar}
-                    description={item.name}
-                    price={item.avatar}
+                    description={item.description}
+                    price={item.price}
                   />
                 );
               })
