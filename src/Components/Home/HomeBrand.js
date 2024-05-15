@@ -16,6 +16,7 @@ const HomeBrand = ({ pathTxt }) => {
 
   useEffect(() => {
     getBrandData();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
   return (
     <Container>

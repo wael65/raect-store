@@ -25,7 +25,7 @@ const NavBar = () => {
               cldImg={storeLogo}
               width="170"
               height="50"
-              className="d-inline-block align-center"
+              // className="d-inline-block align-center"
             />
           </a>
         </Navbar.Brand>
@@ -55,7 +55,7 @@ const NavBar = () => {
             navbarScroll
           >
             <Nav.Link
-              href="/login"
+              href="/"
               className="nav-text d-flex mt-3 justify-content-center"
               style={{
                 marginLeft: "0em",
@@ -77,7 +77,7 @@ const NavBar = () => {
               </p>
             </Nav.Link>
             <Nav.Link
-              href="/cart"
+              href="/"
               className="nav-text d-flex mt-3 justify-content-center"
               style={{ color: "white", marginLeft: "1em", marginRight: "2em" }}
             >

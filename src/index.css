@@ -103,6 +103,17 @@ body {
 /*--- HomeProduct component ---*/
 /*--------------------------*/
 
+.next-img {
+  max-width: 2em;
+  max-height: 2em;
+  cursor: pointer;
+  opacity: 0.75;
+}
+
+.next-img:hover {
+  opacity: 1;
+}
+
 /*--- End - HomeProduct component ---*/
 
 /*--------------------------*/

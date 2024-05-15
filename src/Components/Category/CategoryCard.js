@@ -16,10 +16,7 @@ const CategoryCard = ({ img, title }) => {
         marginTop: "1em",
       }}
     >
-      <NavLink
-        to="/brands/:id"
-        style={{ textDecoration: "none", cursor: "pointer" }}
-      >
+      <NavLink to="/" style={{ textDecoration: "none", cursor: "pointer" }}>
         <div className="allCard mb-3 categoty-card">
           <div>
             <img alt="zcv" src={img} className="categoty-card-img" />

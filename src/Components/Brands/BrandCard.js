@@ -14,10 +14,7 @@ const BrandCard = ({ img }) => {
         marginTop: "1em",
       }}
     >
-      <NavLink
-        to="/brands/:id"
-        style={{ textDecoration: "none", cursor: "pointer" }}
-      >
+      <NavLink to="/" style={{ textDecoration: "none", cursor: "pointer" }}>
         <div className="allCard d-flex justify-content-center">
           <Card.Img className="brand-card-img" src={img} />
         </div>

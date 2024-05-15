@@ -8,21 +8,19 @@ const HomeProduct = ({ title, btnTxt, pathTxt }) => {
   const [prod, setProd] = useState([]);
 
   const getProdData = async () => {
-    const res = await baseUrl.get("product");
+    const res = await baseUrl.get(`product?page=1&limit=4`);
 
-    setProd(res.data);
+    setProd(res.data.product);
     console.log(prod);
   };
 
   useEffect(() => {
     getProdData();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
   return (
     <Container>
-      <div
-        className="home-container "
-        // style={{ borderStyle: "solid", borderColor: "red", borderWidth: "5px" }}
-      >
+      <div className="home-container ">
         <SubTitle
           title={"Shop Today's Deals"}
           btnTxt={"See more deals"}
@@ -30,7 +28,7 @@ const HomeProduct = ({ title, btnTxt, pathTxt }) => {
         />
         <Row className="my-2 d-flex justify-content-start ">
           {prod
-            ? prod.slice(0, 4).map((item, index) => {
+            ? prod.map((item, index) => {
                 return (
                   <ProductCard
                     key={index}
