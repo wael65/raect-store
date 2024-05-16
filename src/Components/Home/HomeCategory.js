@@ -30,7 +30,7 @@ const HomeCategory = ({ title, btnTxt, pathTxt }) => {
           btnTxt={"See all categories"}
           pathTxt={pathTxt}
         />
-        <Row className="my-3 d-flex justify-content-between ">
+        <Row className="my-3 d-flex justify-content-between">
           {cat
             ? cat.slice(0, 5).map((item, index) => {
                 return (

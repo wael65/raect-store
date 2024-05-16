@@ -53,6 +53,7 @@ body {
   height: 1.5em;
   width: 1.5em;
 }
+
 /*--- End - NavBar component ---*/
 
 /*------------------------*/
@@ -78,6 +79,9 @@ body {
   background: linear-gradient(175.24deg, #b2e8f0 0%, #c9c9c9 100%);
 }
 
+.slider-text {
+  margin: 0 2em;
+}
 .slider-title {
   color: #915970;
   font-family: Almarai;
@@ -88,7 +92,13 @@ body {
   text-align: center;
 }
 
-.slider-text {
+@media (max-width: 656px) {
+  .slider-text {
+    margin: 2em 2em 0 2em;
+  }
+}
+
+.slider-desc {
   color: #915970;
   font-family: Almarai;
   font-size: 24px;
@@ -292,9 +302,6 @@ body {
   background-color: #1d1f1f;
 }
 
-.footer {
-  width: 100%;
-}
 .footer-shroot {
   color: #979797;
   font-family: Almarai;
@@ -315,4 +322,5 @@ body {
   text-align: left;
   text-align: justify;
 }
+
 /*-------- end footer ----------*/

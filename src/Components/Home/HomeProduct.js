@@ -20,13 +20,13 @@ const HomeProduct = ({ title, btnTxt, pathTxt }) => {
   }, []);
   return (
     <Container>
-      <div className="home-container ">
+      <div className="home-container">
         <SubTitle
           title={"Shop Today's Deals"}
           btnTxt={"See more deals"}
           pathTxt={pathTxt}
         />
-        <Row className="my-2 d-flex justify-content-start ">
+        <Row className="my-3 d-flex justify-content-start">
           {prod
             ? prod.map((item, index) => {
                 return (

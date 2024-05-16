@@ -16,7 +16,7 @@ const storeLogo = cld.image("store/white-store-logo_vx1u6x.png");
 
 const NavBar = () => {
   return (
-    <Navbar className="" bg="dark" variant="dark" expand="lg">
+    <Navbar bg="dark" variant="dark" expand="lg">
       <Container fluid>
         <Navbar.Brand className="mx-3">
           <a href="/">
@@ -25,31 +25,37 @@ const NavBar = () => {
               cldImg={storeLogo}
               width="170"
               height="50"
-              // className="d-inline-block align-center"
             />
           </a>
         </Navbar.Brand>
-        <Navbar.Toggle aria-controls="navbarScroll " />
+        <Navbar.Toggle aria-controls="navbarScroll" />
         <Navbar.Collapse id="navbarScroll">
           <Form
-            className="d-flex mx-5  form-control bg-transparent border-0"
-            style={{ maxHeight: "100px" }}
+            className=" serch-form d-flex form-control bg-transparent border-0"
             navbarScroll
           >
             <Form.Control
               type="search"
               placeholder="Search..."
-              className="me-2 text-center"
+              className="text-center"
               aria-label="Search"
             />
-            <Button variant="outline-light">Search</Button>
+
+            <Button
+              variant="outline-light"
+              className=" d-flex justify-content-center "
+              style={{ marginLeft: "0.5em" }}
+            >
+              Search
+            </Button>
           </Form>
 
           <Nav
+            className="d-flex flex-row justify-content-center "
             style={{
               maxHeight: "100px",
-              marginRight: "2em",
-              marginLeft: "0em",
+              marginRight: "1em",
+              marginLeft: "1.5em",
               paddingLeft: "0em",
             }}
             navbarScroll
@@ -79,14 +85,18 @@ const NavBar = () => {
             <Nav.Link
               href="/"
               className="nav-text d-flex mt-3 justify-content-center"
-              style={{ color: "white", marginLeft: "1em", marginRight: "2em" }}
+              style={{
+                color: "white",
+                marginLeft: "0.5em",
+                // marginRight: "2em",
+              }}
             >
               {/* <img src={cart} className="login-img" alt="sfvs" /> */}
               <AdvancedImage className="login-img" cldImg={cart} />
               <p
                 style={{
                   color: "white",
-                  paddingLeft: "0.4em",
+                  paddingLeft: "0.2em",
                   fontSize: "1.1em",
                   fontWeight: "normal",
                 }}
