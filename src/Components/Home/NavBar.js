@@ -19,7 +19,7 @@ const NavBar = () => {
     <Navbar bg="dark" variant="dark" expand="lg">
       <Container fluid>
         <Navbar.Brand className="mx-3">
-          <a href="/">
+          <a href="/home">
             <AdvancedImage
               className="dicount-img"
               cldImg={storeLogo}
