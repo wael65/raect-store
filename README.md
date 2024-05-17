@@ -2,11 +2,11 @@
 
 create complete and commercial react store in steps
 
-## 1st step (v1)
+## 1st step (v.1.0)
 
-### 1- Get data
+### 1- Home page design
 
-### 2- Home page design and funcionality
+### 2- fetch data from API and display it in home page
 
 ## Backend and Hosting
 
