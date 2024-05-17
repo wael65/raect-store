@@ -13,7 +13,7 @@ const AllProduct = ({ title, btnTxt, pathTxt }) => {
 
   // eslint-disable-next-line react-hooks/exhaustive-deps
   const getProdData = async (page) => {
-    const res = await baseUrl.get(`product?page=${page}&limit=4`);
+    const res = await baseUrl.get(`product?page=${page}&limit=8`);
 
     const { product, totalPages } = res.data;
     setProd(product);

@@ -23,7 +23,7 @@ const ProductCard = ({ title, img, description, price }) => {
           <Link to="/" style={{ textDecoration: "none" }}>
             <Card.Img style={{ height: "228px", width: "100%" }} src={img} />
           </Link>
-          <div className="d-flex justify-content-end mx-2 ">
+          <div className="d-flex justify-content-start mx-3 ">
             <img
               src={favoff}
               alt=""
@@ -41,6 +41,10 @@ const ProductCard = ({ title, img, description, price }) => {
             <Card.Text>
               <div className="d-flex justify-content-between ">
                 <div className="d-flex">
+                  <div className="card-price">{price}</div>
+                  <div className="card-currency mx-1">جنيه</div>
+                </div>
+                <div className="d-flex">
                   <img
                     className=""
                     src={rate}
@@ -49,10 +53,6 @@ const ProductCard = ({ title, img, description, price }) => {
                     width="16px"
                   />
                   <div className="card-rate mx-2">4.5</div>
-                </div>
-                <div className="d-flex">
-                  <div className="card-price">{price}</div>
-                  <div className="card-currency mx-1">جنيه</div>
                 </div>
               </div>
             </Card.Text>

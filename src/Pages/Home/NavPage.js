@@ -1,9 +1,7 @@
 import React, { useState, useEffect } from "react";
-import { Container, Row, Navbar, Form, Nav, Button } from "react-bootstrap";
-import { Link } from "react-router-dom";
+import { Container, Row, Navbar, Form, Nav } from "react-bootstrap";
 
 import ProductCard from "../../Components/Products/ProductCard";
-import SubTitle from "../../Components/Uitily/SubTitle";
 import baseUrl from "../../Api/baseURL";
 import next from "../../images/next.png";
 import previous from "../../images/previous.png";
@@ -19,7 +17,7 @@ import storeLogo from "../../images/white-store-logo.png";
 import login from "../../images/login.png";
 import cart from "../../images/cart.png";
 
-const NavPage = ({ btnTxt, pathTxt }) => {
+const NavPage = () => {
   const [hide, setHide] = useState("show-sections");
   const [show, setShow] = useState("hide-sections");
 
@@ -31,7 +29,7 @@ const NavPage = ({ btnTxt, pathTxt }) => {
 
   // eslint-disable-next-line react-hooks/exhaustive-deps
   const getProdData = async (page, word) => {
-    const res = await baseUrl.get(`product?name=${word}&page=${page}&limit=4`);
+    const res = await baseUrl.get(`product?name=${word}&page=${page}&limit=8`);
 
     const { product, totalPages } = res.data;
     setProd(product);
@@ -81,14 +79,15 @@ const NavPage = ({ btnTxt, pathTxt }) => {
                   src={storeLogo}
                   width="170"
                   height="50"
+                  alt="disc"
                 />
               </a>
             </Navbar.Brand>
-            <Navbar.Toggle aria-controls="navbarScroll" />
-            <Navbar.Collapse id="navbarScroll">
+            <Navbar.Toggle aria-controls="navbarscroll" />
+            <Navbar.Collapse id="navbarscroll">
               <Form
-                className=" serch-form d-flex form-control bg-transparent border-0"
-                navbarScroll
+                className="search-form d-flex form-control bg-transparent border-0 "
+                navbarscroll="true"
               >
                 <Form.Control
                   value={searchWord}
@@ -98,14 +97,6 @@ const NavPage = ({ btnTxt, pathTxt }) => {
                   className="text-center"
                   aria-label="Search"
                 />
-
-                <Button
-                  variant="outline-light"
-                  className=" d-flex justify-content-center "
-                  style={{ marginLeft: "0.5em" }}
-                >
-                  Search
-                </Button>
               </Form>
 
               <Nav

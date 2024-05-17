@@ -28,11 +28,11 @@ const NavBar = () => {
             />
           </a>
         </Navbar.Brand>
-        <Navbar.Toggle aria-controls="navbarScroll" />
-        <Navbar.Collapse id="navbarScroll">
+        <Navbar.Toggle aria-controls="navbarscroll" />
+        <Navbar.Collapse id="navbarscroll">
           <Form
             className=" serch-form d-flex form-control bg-transparent border-0"
-            navbarScroll
+            navbarscroll="true"
           >
             <Form.Control
               type="search"
