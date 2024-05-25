@@ -2,18 +2,17 @@
 
 create complete and commercial react store in steps
 
-## 1st step (v.1.1)
+## 2nd step (v.2.0)
 
-### 1- Home page design
+### 1- add redux
 
-### 2- fetch data from API and display it in home page
+### 2- authentication
 
-### 3- Search bar functionality
+### 3- register and login
 
 ## Backend and Hosting
 
-using simple-backend repo which deployed on web service of render.com
-render.com account logIn with real man google account
+not hosted yet
 
 ## Database
 

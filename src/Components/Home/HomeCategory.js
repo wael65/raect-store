@@ -1,24 +1,9 @@
-import React, { useState, useEffect } from "react";
-import { Container, Row } from "react-bootstrap";
-import CategoryCard from "./../Category/CategoryCard";
+import React from "react";
+import { Container } from "react-bootstrap";
 import SubTitle from "../Uitily/SubTitle";
+import CategoryContainer from "../../Components/Category/CategoryContainer";
 
-import baseUrl from "../../Api/baseURL";
-
-const HomeCategory = ({ title, btnTxt, pathTxt }) => {
-  const [cat, setCat] = useState([]);
-
-  const getCatData = async () => {
-    const res = await baseUrl.get("category");
-
-    setCat(res.data);
-    console.log(cat);
-  };
-
-  useEffect(() => {
-    getCatData();
-  }, []);
-
+const HomeCategory = ({ title, btnTxt, pathTxt, numOfCat }) => {
   return (
     <Container>
       <div
@@ -28,21 +13,9 @@ const HomeCategory = ({ title, btnTxt, pathTxt }) => {
         <SubTitle
           title={"Top Categories"}
           btnTxt={"See all categories"}
-          pathTxt={pathTxt}
+          pathTxt={"/category"}
         />
-        <Row className="my-3 d-flex justify-content-between">
-          {cat
-            ? cat.slice(0, 5).map((item, index) => {
-                return (
-                  <CategoryCard
-                    key={index}
-                    title={item.name}
-                    img={item.avatar}
-                  />
-                );
-              })
-            : null}
-        </Row>
+        <CategoryContainer numOfCat={5} />
       </div>
     </Container>
   );
