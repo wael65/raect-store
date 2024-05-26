@@ -1,6 +1,8 @@
 import React, { useState } from "react";
 import { ToastContainer } from "react-toastify";
 
+// import baseUrl from "../../Api/baseURL";
+
 import storeLogo from "../../images/white-store-logo.png";
 import { RegisterHook } from "../../hooks/Auth/AuthHook";
 
@@ -14,6 +16,38 @@ function AuthPage() {
     handleRegPassword,
     submitRegister,
   ] = RegisterHook();
+
+  // const [regName, setRegName] = useState("");
+  // const [regEmail, setRegEmail] = useState("");
+  // const [regPassword, setRegPassword] = useState("");
+
+  // const handleRegName = (e) => {
+  //   setRegName(e.target.value);
+  //   console.log(e.target.value);
+  // };
+  // const handleRegEmail = (e) => {
+  //   setRegEmail(e.target.value);
+  //   console.log(e.target.value);
+  // };
+  // const handleRegPassword = (e) => {
+  //   setRegPassword(e.target.value);
+  //   console.log(e.target.value);
+  // };
+
+  // const submitRegister = async (e) => {
+  //   e.preventDefault();
+
+  //   baseUrl
+  //     .post("auth/register", {
+  //       name: regName,
+  //       email: regEmail,
+  //       password: regPassword,
+  //     })
+  //     .then((res) => {
+  //       console.log(res);
+  //       console.log(res.data);
+  //     });
+  // };
 
   let [authMode, setAuthMode] = useState("signup");
 

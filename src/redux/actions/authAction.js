@@ -5,7 +5,7 @@ import { useInsertData } from "../../Api/useInsertData";
 //create new user
 export const createNewUser = (data) => async (dispatch) => {
   try {
-    const response = await useInsertData(`auth/register`, data.json);
+    const response = await useInsertData(`/auth/register`, data);
     dispatch({
       type: CREATE_NEW_USER,
       payload: response,
