@@ -3,6 +3,7 @@ import HomePage from "./Pages/Home/HomePage";
 import NavPage from "./Pages/Home/NavPage";
 import Footer from "./Components/Uitily/Footer";
 import CategoryPage from "./Pages/Category/CategoryPage";
+import AuthPage from "./Pages/Auth/AuthPage";
 
 function App() {
   return (
@@ -11,6 +12,7 @@ function App() {
         <Routes>
           <Route index element={<HomePage />} />
           <Route path="/home" element={<NavPage />} />
+          <Route path="/auth" element={<AuthPage />} />
           <Route path="/category" element={<CategoryPage />} />
         </Routes>
       </BrowserRouter>

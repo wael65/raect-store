@@ -1,12 +1,11 @@
 import { CREATE_NEW_USER, LOGIN_USER } from "../type";
 
 import { useInsertData } from "../../Api/useInsertData";
-// import { useGetData, useGetDataToken } from "./../../hooks/useGetData";
 
 //create new user
 export const createNewUser = (data) => async (dispatch) => {
   try {
-    const response = await useInsertData(`auth/register`, data);
+    const response = await useInsertData(`auth/register`, data.json);
     dispatch({
       type: CREATE_NEW_USER,
       payload: response,

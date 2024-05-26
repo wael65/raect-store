@@ -19,7 +19,7 @@ const NavBar = () => {
     <Navbar bg="dark" variant="dark" expand="lg">
       <Container fluid>
         <Navbar.Brand className="mx-3">
-          <a href="/home">
+          <a href="/">
             <AdvancedImage
               className="dicount-img"
               cldImg={storeLogo}
@@ -61,7 +61,7 @@ const NavBar = () => {
             navbarScroll
           >
             <Nav.Link
-              href="/"
+              href="/auth"
               className="nav-text d-flex mt-3 justify-content-center"
               style={{
                 marginLeft: "0em",
