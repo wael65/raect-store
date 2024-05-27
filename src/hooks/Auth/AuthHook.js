@@ -36,7 +36,8 @@ export const RegisterHook = () => {
     }
   };
 
-  const submitRegister = async () => {
+  const submitRegister = async (e) => {
+    e.preventDefault();
     setTimeout(() => {
       regValidation();
     }, "5000");
@@ -48,6 +49,7 @@ export const RegisterHook = () => {
         password: regPassword,
       })
     );
+
     setRegLoading(false);
     setRegName("");
     setRegEmail("");
@@ -61,17 +63,19 @@ export const RegisterHook = () => {
     if (regLoading === false) {
       if (res) {
         console.log(res);
-        setTimeout(() => {
+
+        if (res.data.accessToken) {
+          localStorage.setItem("token", res.data.accessToken);
+          console.log(res.data.accessToken);
           notify(" Register Success", "success");
-        }, 5000);
-        // if (res.data.token) {
-        //   localStorage.setItem("token", res.data.token);
-        //   setTimeout(() => {
-        //   notify(" Register Success", "success");
-        //   }, 5000);
-        // }
+
+          setTimeout(() => {
+            window.location.reload();
+          }, 3000);
+        }
       }
     }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [regLoading]);
 
   return [
