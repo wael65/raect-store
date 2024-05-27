@@ -4,7 +4,7 @@ import notify from "../useNotify";
 
 import { createNewUser } from "../../redux/actions/authAction";
 
-export const RegisterHook = () => {
+const RegisterHook = () => {
   const [regName, setRegName] = useState("");
   const [regEmail, setRegEmail] = useState("");
   const [regPassword, setRegPassword] = useState("");
@@ -88,3 +88,5 @@ export const RegisterHook = () => {
     submitRegister,
   ];
 };
+
+export default RegisterHook;

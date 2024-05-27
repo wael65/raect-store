@@ -4,7 +4,8 @@ import { ToastContainer } from "react-toastify";
 // import baseUrl from "../../Api/baseURL";
 
 import storeLogo from "../../images/white-store-logo.png";
-import { RegisterHook } from "../../hooks/Auth/AuthHook";
+import RegisterHook from "../../hooks/Auth/SignupHook";
+import LoginHook from "../../hooks/Auth/LoginHook";
 
 function AuthPage() {
   const [
@@ -16,6 +17,14 @@ function AuthPage() {
     handleRegPassword,
     submitRegister,
   ] = RegisterHook();
+
+  const [
+    loginEmail,
+    loginPassword,
+    handleLoginEmail,
+    handleLoginPassword,
+    submitLogin,
+  ] = LoginHook();
 
   let [authMode, setAuthMode] = useState("signin");
 
@@ -49,8 +58,8 @@ function AuthPage() {
             <div className="form-group mt-3">
               <label>Email address</label>
               <input
-                // value={email}
-                // onChange={handleEmail}
+                value={loginEmail}
+                onChange={handleLoginEmail}
                 type="email"
                 className="form-control mt-1"
                 placeholder="Enter email"
@@ -59,13 +68,19 @@ function AuthPage() {
             <div className="form-group mt-3">
               <label>Password</label>
               <input
+                value={loginPassword}
+                onChange={handleLoginPassword}
                 type="password"
                 className="form-control mt-1"
                 placeholder="Enter password"
               />
             </div>
             <div className="d-grid gap-2 mt-3">
-              <button type="submit" className="btn btn-dark">
+              <button
+                type="submit"
+                onClick={submitLogin}
+                className="btn btn-dark"
+              >
                 Submit
               </button>
             </div>
