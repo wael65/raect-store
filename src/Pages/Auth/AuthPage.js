@@ -18,13 +18,8 @@ function AuthPage() {
     submitRegister,
   ] = RegisterHook();
 
-  const [
-    loginEmail,
-    loginPassword,
-    handleLoginEmail,
-    handleLoginPassword,
-    submitLogin,
-  ] = LoginHook();
+  const [email, loginPassword, handleEmail, handleLoginPassword, submitLogin] =
+    LoginHook();
 
   let [authMode, setAuthMode] = useState("signin");
 
@@ -58,8 +53,8 @@ function AuthPage() {
             <div className="form-group mt-3">
               <label>Email address</label>
               <input
-                value={loginEmail}
-                onChange={handleLoginEmail}
+                value={email}
+                onChange={handleEmail}
                 type="email"
                 className="form-control mt-1"
                 placeholder="Enter email"
@@ -89,6 +84,7 @@ function AuthPage() {
             </p>
           </div>
         </form>
+        <ToastContainer />
       </div>
     );
   }

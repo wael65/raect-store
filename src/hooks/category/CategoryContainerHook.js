@@ -9,7 +9,6 @@ const CategoryContainerHook = () => {
     dispatch(getAllCategory(10));
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
-  if (allCategory) console.log(allCategory);
   return [allCategory];
 };
 

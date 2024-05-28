@@ -5,14 +5,14 @@ import notify from "../useNotify";
 import { loginUser } from "../../redux/actions/authAction";
 
 const LoginHook = () => {
-  const [loginEmail, setLoginEmail] = useState("");
+  const [email, setEmail] = useState("");
   const [loginPassword, setLoginPassword] = useState("");
   const [loginLoading, setLoginLoading] = useState(true);
 
   const dispatch = useDispatch();
 
-  const handleLoginEmail = (e) => {
-    setLoginEmail(e.target.value);
+  const handleEmail = (e) => {
+    setEmail(e.target.value);
     console.log(e.target.value);
   };
   const handleLoginPassword = (e) => {
@@ -20,7 +20,7 @@ const LoginHook = () => {
     console.log(e.target.value);
   };
 
-  console.log(loginEmail);
+  console.log(email);
 
   const submitLogin = async (e) => {
     e.preventDefault();
@@ -28,7 +28,7 @@ const LoginHook = () => {
     setLoginLoading(true);
     await dispatch(
       loginUser({
-        email: loginEmail,
+        email: email,
         password: loginPassword,
       })
     );
@@ -46,36 +46,29 @@ const LoginHook = () => {
           localStorage.setItem("token", res.data.accessToken);
           localStorage.setItem("user", JSON.stringify(res.data));
 
-          notify("تم تسجيل الدخول بنجاح", "success");
-          loginEmail("");
-          loginPassword("");
-          //   setTimeout(() => {
-          //     window.location.href = "/";
-          //   }, 1500);
+          notify("Login Successfully", "success");
+          setEmail("");
+          setLoginPassword("");
+          setTimeout(() => {
+            window.location.href = "/";
+          }, 1500);
+        } else {
+          localStorage.removeItem("token");
+          localStorage.removeItem("user");
         }
-        //      else {
-        //       localStorage.removeItem("token");
-        //       localStorage.removeItem("user");
-        //     }
 
-        //     if (res.data.message === "Incorrect email or password") {
-        //       localStorage.removeItem("token");
-        //       localStorage.removeItem("user");
-        //       notify("كلمة السر او الايميل خطا", "error");
-        //     }
-        //     setLoginLoading(true);
+        if (res.statusText !== "OK") {
+          notify(res.data.msg, "error");
+          localStorage.removeItem("token");
+          localStorage.removeItem("user");
+        }
+        setLoginLoading(true);
       }
     }
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [loginLoading]);
 
-  return [
-    loginEmail,
-    loginPassword,
-    handleLoginEmail,
-    handleLoginPassword,
-    submitLogin,
-  ];
+  return [email, loginPassword, handleEmail, handleLoginPassword, submitLogin];
 };
 
 export default LoginHook;
