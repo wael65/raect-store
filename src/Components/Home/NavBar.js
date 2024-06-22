@@ -1,5 +1,12 @@
-import React from "react";
-import { Navbar, Container, Form, Nav, Button } from "react-bootstrap";
+import React, { useEffect } from "react";
+import {
+  Navbar,
+  Container,
+  Form,
+  Nav,
+  Button,
+  NavDropdown,
+} from "react-bootstrap";
 import { AdvancedImage } from "@cloudinary/react";
 import { Cloudinary } from "@cloudinary/url-gen";
 
@@ -15,6 +22,14 @@ const cart = cld.image("store/cart_mmueen");
 const storeLogo = cld.image("store/white-store-logo_vx1u6x.png");
 
 const NavBar = () => {
+  const dataUser = localStorage.getItem("user");
+  let logName;
+  if (dataUser) {
+    logName = JSON.parse(dataUser)["name"];
+    console.log(logName);
+    console.log(dataUser);
+  }
+
   return (
     <Navbar bg="dark" variant="dark" expand="lg">
       <Container fluid>
@@ -56,32 +71,69 @@ const NavBar = () => {
               maxHeight: "100px",
               marginRight: "1em",
               marginLeft: "1.5em",
-              paddingLeft: "0em",
             }}
             navbarScroll
           >
-            <Nav.Link
-              href="/auth"
-              className="nav-text d-flex mt-3 justify-content-center"
-              style={{
-                marginLeft: "0em",
-              }}
-            >
-              <AdvancedImage className="login-img" cldImg={login} />
-
-              {/* <img src={login} className="login-img" alt="sfvs" /> */}
-              <p
-                className="login-txt"
+            {logName ? (
+              <div className="d-flex align-items-center">
+                {/* <AdvancedImage className="login-img" cldImg={login} /> */}
+                <NavDropdown
+                  // title={logName}
+                  id="nav-dropdown"
+                  drop="down"
+                  menuVariant="dark"
+                  className=" d-flex mt-3 justify-content-center"
+                  style={{
+                    color: "white",
+                    // paddingLeft: "0.7em",
+                    paddingRi: "0",
+                    fontSize: "1.2em",
+                    fontWeight: "normal",
+                  }}
+                >
+                  <NavDropdown.Item href="#">Profile</NavDropdown.Item>
+                  <NavDropdown.Item href="#">Log Out</NavDropdown.Item>
+                </NavDropdown>
+                <p
+                  style={{
+                    color: "white",
+                    paddingRight: "1em",
+                    // paddingLeft: "0.4em",
+                    paddingLeft: "0",
+                    fontSize: "1.2em",
+                    fontWeight: "normal",
+                    marginBottom: 0,
+                  }}
+                >
+                  {logName}
+                </p>
+              </div>
+            ) : (
+              <Nav.Link
+                href="/auth"
+                className="nav-text d-flex mt-3 justify-content-center"
                 style={{
-                  color: "white",
-                  paddingLeft: "0.4em",
-                  fontSize: "1.1em",
-                  fontWeight: "normal",
+                  marginLeft: "0em",
                 }}
               >
-                login
-              </p>
-            </Nav.Link>
+                <AdvancedImage className="login-img" cldImg={login} />
+
+                {/* <img src={login} className="login-img" alt="sfvs" /> */}
+
+                <p
+                  className="login-txt"
+                  style={{
+                    color: "white",
+                    paddingLeft: "0.4em",
+                    fontSize: "1.1em",
+                    fontWeight: "normal",
+                  }}
+                >
+                  login
+                </p>
+              </Nav.Link>
+            )}
+
             <Nav.Link
               href="/"
               className="nav-text d-flex mt-3 justify-content-center"
