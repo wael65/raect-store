@@ -2,13 +2,15 @@
 
 create complete and commercial react store in steps
 
-## 2nd step (v.2.0)
+## 2nd step (v.2)
 
 ### 1- add redux
 
 ### 2- authentication
 
 ### 3- register and login
+
+### 4- user profile page
 
 ## Backend and Hosting
 
