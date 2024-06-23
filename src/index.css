@@ -88,6 +88,25 @@ body {
   width: 1.5em;
 }
 
+.dropdown-toggle {
+  color: white !important;
+  font-size: 1.2em !important;
+  font-weight: normal !important;
+  margin-top: 0.75em;
+}
+.dropdown-menu {
+  background-color: #212529 !important;
+  color: white !important;
+}
+.dropdown-item {
+  color: white !important;
+  text-align: left !important;
+}
+.dropdown-item:hover {
+  color: #212529 !important;
+  background-color: white !important;
+}
+
 /*--- End - NavBar component ---*/
 
 /*------------------------*/

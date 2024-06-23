@@ -84,40 +84,17 @@ const NavBar = () => {
             navbarScroll
           >
             {logName ? (
-              <div className="d-flex align-items-center">
-                {/* <AdvancedImage className="login-img" cldImg={login} /> */}
-                <NavDropdown
-                  // title={logName}
-                  id="nav-dropdown"
-                  drop="down"
-                  menuVariant="dark"
-                  className=" d-flex mt-3 justify-content-center"
-                  style={{
-                    color: "white",
-                    paddingRi: "0",
-                    fontSize: "1.2em",
-                    fontWeight: "normal",
-                  }}
-                >
-                  <NavDropdown.Item href="#">Profile</NavDropdown.Item>
-                  <NavDropdown.Item onClick={logout} href="#">
-                    Log Out
-                  </NavDropdown.Item>
-                </NavDropdown>
-                <p
-                  style={{
-                    color: "white",
-                    paddingRight: "1em",
-                    // paddingLeft: "0.4em",
-                    paddingLeft: "0",
-                    fontSize: "1.2em",
-                    fontWeight: "normal",
-                    marginBottom: 0,
-                  }}
-                >
-                  {logName}
-                </p>
-              </div>
+              <NavDropdown
+                title={logName}
+                id="nav-dropdown"
+                drop="down"
+                menuVariant="dark"
+              >
+                <NavDropdown.Item href="#">Profile</NavDropdown.Item>
+                <NavDropdown.Item onClick={logout} href="/">
+                  Log Out
+                </NavDropdown.Item>
+              </NavDropdown>
             ) : (
               <Nav.Link
                 href="/auth"
