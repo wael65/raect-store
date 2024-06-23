@@ -90,7 +90,9 @@ const NavBar = () => {
                 drop="down"
                 menuVariant="dark"
               >
-                <NavDropdown.Item href="#">Profile</NavDropdown.Item>
+                <NavDropdown.Item href="/user/profile">
+                  Profile
+                </NavDropdown.Item>
                 <NavDropdown.Item onClick={logout} href="/">
                   Log Out
                 </NavDropdown.Item>

@@ -4,6 +4,7 @@ import NavPage from "./Pages/Home/NavPage";
 import Footer from "./Components/Uitily/Footer";
 import CategoryPage from "./Pages/Category/CategoryPage";
 import AuthPage from "./Pages/Auth/AuthPage";
+import UserProfilePage from "./Pages/User/UserProfilePage";
 
 function App() {
   return (
@@ -13,6 +14,7 @@ function App() {
           <Route index element={<HomePage />} />
           <Route path="/home" element={<NavPage />} />
           <Route path="/auth" element={<AuthPage />} />
+          <Route path="/user/profile" element={<UserProfilePage />} />
           <Route path="/category" element={<CategoryPage />} />
         </Routes>
       </BrowserRouter>
