@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import {
   Navbar,
   Container,
@@ -23,12 +23,21 @@ const storeLogo = cld.image("store/white-store-logo_vx1u6x.png");
 
 const NavBar = () => {
   const dataUser = localStorage.getItem("user");
-  let logName;
-  if (dataUser) {
-    logName = JSON.parse(dataUser)["name"];
-    console.log(logName);
-    console.log(dataUser);
-  }
+
+  const [logName, setLogName] = useState("");
+  useEffect(() => {
+    if (dataUser) {
+      setLogName(JSON.parse(dataUser)["name"]);
+
+      console.log(logName);
+      console.log(dataUser);
+    }
+  }, []);
+
+  const logout = () => {
+    localStorage.removeItem("user");
+    setLogName("");
+  };
 
   return (
     <Navbar bg="dark" variant="dark" expand="lg">
@@ -85,14 +94,15 @@ const NavBar = () => {
                   className=" d-flex mt-3 justify-content-center"
                   style={{
                     color: "white",
-                    // paddingLeft: "0.7em",
                     paddingRi: "0",
                     fontSize: "1.2em",
                     fontWeight: "normal",
                   }}
                 >
                   <NavDropdown.Item href="#">Profile</NavDropdown.Item>
-                  <NavDropdown.Item href="#">Log Out</NavDropdown.Item>
+                  <NavDropdown.Item onClick={logout} href="#">
+                    Log Out
+                  </NavDropdown.Item>
                 </NavDropdown>
                 <p
                   style={{
