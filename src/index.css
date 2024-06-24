@@ -429,23 +429,29 @@ label {
 
 /*------- End - Auth Page ------*/
 
-/*------- Admin style from course code - will be edited ------*/
+/*------- Admin & User style from course code - will be edited ------*/
 
 /* admin style  */
-.sidebar {
+.admin-profile {
   height: 660px;
   width: 100%;
-  border-radius: 21px;
+}
+
+.sidebar {
+  height: 360px;
+  width: 100%;
+  margin-top: 5em;
+  border-radius: 0.5em;
   background-color: #ffffff;
 }
 
 .admin-side-text {
   color: #272727;
   font-family: "Almarai";
-  font-size: 12px;
+  font-size: 1em;
   font-weight: bold;
   letter-spacing: 0;
-  line-height: 20px;
+  line-height: 1.5em;
   text-align: left;
   width: 100%;
   border-radius: 5px;
@@ -455,17 +461,28 @@ label {
 .admin-side-text:hover {
   background-color: #272727;
   color: white;
-  font-size: 14px;
+  font-size: 1.1em;
 }
-.admin-content-text {
+
+.admin-content-title {
   color: #555550;
   font-family: Almarai;
-  font-size: 21px;
+  font-size: 2em;
   font-weight: 800;
   letter-spacing: 0;
-  line-height: 28px;
+  line-height: 2em;
   text-align: left;
 }
+.admin-content-title2 {
+  color: #555550;
+  font-family: Almarai;
+  font-size: 1.25em;
+  font-weight: 600;
+  letter-spacing: 0;
+  line-height: 1.5em;
+  text-align: left;
+}
+
 .item-delete-edit {
   color: #979797;
   font-family: "Almarai";
@@ -528,4 +545,60 @@ label {
 }
 /* end admin  */
 
-/*------- End ---- Admin style from course code ------*/
+/* user order */
+.user-order {
+  height: 100%;
+  width: 100%;
+  border-radius: 7px;
+  background-color: #ffffff;
+  box-shadow: 0 1px 2px 0 rgba(151, 151, 151, 0.5);
+}
+.order-title {
+  color: #272727;
+  font-family: "Almarai";
+  font-size: 16px;
+  font-weight: bold;
+}
+
+.stat {
+  color: #979797;
+  font-family: Cairo;
+  font-size: 16px;
+  letter-spacing: 0;
+  line-height: 30px;
+  text-align: right;
+}
+/* end user order */
+
+/* user Address */
+
+.user-address-card {
+  height: 7em;
+  width: 100%;
+  border-radius: 0.2em;
+
+  background-color: #ffffff;
+  box-shadow: 0 1px 2px 0 rgba(151, 151, 151, 0.5);
+}
+.btn-add-address {
+  border: none;
+  height: 50px;
+  width: 100%;
+  color: white;
+  border-radius: 9px;
+  background-color: #272727;
+}
+
+/* user address */
+
+/* user card data */
+.user-data {
+  height: 270px;
+  width: 100% i !important;
+  border-radius: 7px;
+  background-color: #ffffff;
+  box-shadow: 0 1px 2px 0 rgba(151, 151, 151, 0.5);
+}
+/* end user data */
+
+/*------- End ---- Admin & User style from course code ------*/
