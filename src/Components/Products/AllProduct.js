@@ -5,6 +5,7 @@ import SubTitle from "../Uitily/SubTitle";
 import baseUrl from "../../Api/baseURL";
 import next from "../../images/next.png";
 import previous from "../../images/previous.png";
+import ProductCardContiner from "./ProductCardContiner";
 
 const AllProduct = ({ title, btnTxt, pathTxt }) => {
   const [prod, setProd] = useState([]);
@@ -49,21 +50,8 @@ const AllProduct = ({ title, btnTxt, pathTxt }) => {
     <Container>
       <div className="home-container ">
         {/* <SubTitle title={"All Product"} pathTxt={pathTxt} /> */}
-        <Row className="my-2 d-flex justify-content-start ">
-          {prod
-            ? prod.map((item, index) => {
-                return (
-                  <ProductCard
-                    key={index}
-                    title={item.name}
-                    img={item.avatar}
-                    description={item.description}
-                    price={item.price}
-                  />
-                );
-              })
-            : null}
-        </Row>
+        <ProductCardContiner prod={prod} />
+
         <div className="my-2 d-flex justify-content-center ">
           <span>
             <img

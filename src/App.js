@@ -10,6 +10,7 @@ import UserFavoritesPage from "./Pages/User/UserFavoritesPage";
 import UserAddresPage from "./Pages/User/UserAddresPage";
 import ProductsPage from "./Pages/Products/ProductsPage";
 import BrandPage from "./Pages/Brand/BrandPage";
+import ProductDetailsPage from "./Pages/Products/ProductDetailsPage";
 
 function App() {
   return (
@@ -25,6 +26,7 @@ function App() {
           <Route path="/user/addresses" element={<UserAddresPage />} />
           <Route path="/category" element={<CategoryPage />} />
           <Route path="/product" element={<ProductsPage />} />
+          <Route path="/product/:id" element={<ProductDetailsPage />} />
           <Route path="/brand" element={<BrandPage />} />
         </Routes>
       </BrowserRouter>

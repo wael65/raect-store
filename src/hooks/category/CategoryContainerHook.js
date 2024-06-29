@@ -1,6 +1,7 @@
 import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { getAllCategory } from "../../redux/actions/categoryAction";
+
 const CategoryContainerHook = () => {
   const dispatch = useDispatch();
   const allCategory = useSelector((state) => state.categoryReducer.category);

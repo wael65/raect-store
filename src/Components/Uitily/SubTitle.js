@@ -6,7 +6,13 @@ const SubTitle = ({ title, btnTxt, pathTxt }) => {
     <div className="d-flex justify-content-start align-items-center pt-4 subtitle-dev">
       <div className="subtile-txt">{title}</div>
       {btnTxt ? (
-        <Link to={`${pathTxt}`} style={{ textDecoration: "none" }}>
+        <Link
+          to={`${pathTxt}`}
+          style={{ textDecoration: "none" }}
+          onClick={() => {
+            window.scroll(0, 0);
+          }}
+        >
           <div className=" align-content-center shopping-now ">{btnTxt}</div>
         </Link>
       ) : null}
