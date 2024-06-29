@@ -4,7 +4,7 @@ import ProductCard from "../Products/ProductCard";
 import SubTitle from "../Uitily/SubTitle";
 import baseUrl from "../../Api/baseURL";
 
-const HomeProduct = ({ title, btnTxt, pathTxt }) => {
+const HomeTopProduct = ({ title, btnTxt, pathTxt }) => {
   const [prod, setProd] = useState([]);
 
   const getProdData = async () => {
@@ -22,8 +22,8 @@ const HomeProduct = ({ title, btnTxt, pathTxt }) => {
     <Container>
       <div className="home-container">
         <SubTitle
-          title={"Shop Today's Deals"}
-          btnTxt={"See more deals"}
+          title={"Top selling products"}
+          btnTxt={"See more Products"}
           pathTxt={"/product"}
         />
         <Row className="my-3 d-flex justify-content-start">
@@ -46,4 +46,4 @@ const HomeProduct = ({ title, btnTxt, pathTxt }) => {
   );
 };
 
-export default HomeProduct;
+export default HomeTopProduct;

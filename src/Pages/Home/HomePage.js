@@ -6,6 +6,7 @@ import NavBar from "../../Components/Home/NavBar";
 import AllProduct from "../../Components/Products/AllProduct";
 import OfferBanner from "../../Components/Home/OfferBanner";
 import HomeBrand from "../../Components/Home/HomeBrand";
+import HomeTopProduct from "../../Components/Home/HomeTopProduct";
 
 const HomePage = () => {
   return (
@@ -15,7 +16,8 @@ const HomePage = () => {
       <HomeCategory />
       <HomeProduct />
       <OfferBanner />
-      <AllProduct />
+      <HomeTopProduct />
+      {/* <AllProduct /> */}
       <HomeBrand />
     </div>
   );

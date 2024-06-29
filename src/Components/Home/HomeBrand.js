@@ -3,8 +3,9 @@ import { Container, Row } from "react-bootstrap";
 import SubTitle from "../Uitily/SubTitle";
 import BrandCard from "../Brands/BrandCard";
 import baseUrl from "../../Api/baseURL";
+import BrandContainer from "../Brands/BrandContainer";
 
-const HomeBrand = ({ pathTxt }) => {
+const HomeBrand = ({ numOfBrand, pathTxt }) => {
   const [brand, setBrand] = useState([]);
 
   const getBrandData = async () => {
@@ -24,15 +25,9 @@ const HomeBrand = ({ pathTxt }) => {
         <SubTitle
           title={"Top Brands"}
           btnTxt={"See all Brands"}
-          pathTxt={pathTxt}
+          pathTxt={"/brand"}
         />
-        <Row className="my-2 d-flex justify-content-between">
-          {brand
-            ? brand.slice(0, 5).map((item, index) => {
-                return <BrandCard key={index} img={item.avatar} />;
-              })
-            : null}
-        </Row>
+        <BrandContainer numOfBrand={5} />
       </div>
     </Container>
   );

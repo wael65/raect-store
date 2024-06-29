@@ -10,8 +10,10 @@ const BrandCard = ({ img }) => {
       style={{
         width: "100%",
         height: "auto",
+        minHeight: "7em",
         border: "none",
         marginTop: "1em",
+        marginBottom: "3em",
       }}
     >
       <NavLink to="/" style={{ textDecoration: "none", cursor: "pointer" }}>
