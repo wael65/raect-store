@@ -1,8 +1,7 @@
 import React from "react";
-import { Container, Row } from "react-bootstrap";
+import { Row } from "react-bootstrap";
 import ProductCard from "./ProductCard";
 import ProductCardContinerHook from "../../hooks/product/ProductCardContinerHook";
-// import AllProduct from "./AllProduct";
 
 const ProductCardContiner = () => {
   const [allProducts] = ProductCardContinerHook();
