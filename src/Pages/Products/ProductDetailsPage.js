@@ -3,6 +3,7 @@ import { Container } from "react-bootstrap";
 import { useParams } from "react-router-dom";
 import ProductCardContiner from "../../Components/Products/ProductCardContiner";
 import ProductDetails from "../../Components/Products/ProductDetails";
+import ProductSimilarContiner from "../../Components/Products/ProductSimilarContiner";
 // import CategoryHeader from "../../Components/Category/CategoryHeader";
 // import CardProductsContainer from "../../Components/Products/CardProductsContainer";
 // import ProductDetalis from "../../Components/Products/ProductDetalis";
@@ -20,7 +21,7 @@ const ProductDetailsPage = ({ prod }) => {
       <Container>
         <ProductDetails />
         {/* <RateContainer /> */}
-        <ProductCardContiner prod={prod} title="منتجات قد تعجبك" />
+        <ProductSimilarContiner prod={prod} title="منتجات قد تعجبك" />
       </Container>
     </div>
   );

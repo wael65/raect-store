@@ -2,22 +2,11 @@ import React, { useState, useEffect } from "react";
 import { Container, Row } from "react-bootstrap";
 import ProductCard from "../Products/ProductCard";
 import SubTitle from "../Uitily/SubTitle";
-import baseUrl from "../../Api/baseURL";
+import ProductCardContinerHook from "../../hooks/product/ProductCardContinerHook";
 
 const HomeTopProduct = ({ title, btnTxt, pathTxt }) => {
-  const [prod, setProd] = useState([]);
+  const [topProducts] = ProductCardContinerHook();
 
-  const getProdData = async () => {
-    const res = await baseUrl.get(`product?page=1&limit=4`);
-
-    setProd(res.data.product);
-    console.log(prod);
-  };
-
-  useEffect(() => {
-    getProdData();
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, []);
   return (
     <Container>
       <div className="home-container">
@@ -27,8 +16,8 @@ const HomeTopProduct = ({ title, btnTxt, pathTxt }) => {
           pathTxt={"/product"}
         />
         <Row className="my-3 d-flex justify-content-start">
-          {prod
-            ? prod.map((item, index) => {
+          {topProducts
+            ? topProducts.slice(0, 4).map((item, index) => {
                 return (
                   <ProductCard
                     key={index}

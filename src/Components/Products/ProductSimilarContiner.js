@@ -2,14 +2,16 @@ import React from "react";
 import { Row } from "react-bootstrap";
 import ProductCard from "./ProductCard";
 import ProductCardContinerHook from "../../hooks/product/ProductCardContinerHook";
+import SubTitle from "../Uitily/SubTitle";
 
-const ProductCardContiner = () => {
-  const [allProducts] = ProductCardContinerHook();
-  console.log(allProducts);
+const ProductSimilarContiner = () => {
+  const [similarProducts] = ProductCardContinerHook();
   return (
     <Row className="my-2 d-flex justify-content-start ">
-      {allProducts
-        ? allProducts.map((item, index) => {
+      <SubTitle title={"Similar Products"} />
+
+      {similarProducts
+        ? similarProducts.slice(0, 4).map((item, index) => {
             return (
               <ProductCard
                 key={index}
@@ -25,4 +27,4 @@ const ProductCardContiner = () => {
   );
 };
 
-export default ProductCardContiner;
+export default ProductSimilarContiner;

@@ -11,7 +11,11 @@ const ProductCardContinerHook = () => {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
   console.log(allProducts);
-  return [allProducts];
+  console.log(allProducts.totalItems);
+  let totalPages = allProducts.totalPages;
+  console.log(allProducts.totalPages);
+
+  return [allProducts.product, totalPages];
 };
 
 export default ProductCardContinerHook;
